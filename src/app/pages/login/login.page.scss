@@ -1,0 +1,98 @@
+$form-font-size: 0.85rem;
+$primary-color: #008fff;
+
+.background-image {
+  background: url("/assets/images/background.jpg") center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --inner-padding-start: 0;
+  ion-input {
+    font-size: $form-font-size;
+  }
+  ion-icon {
+    margin-right: 15px;
+    opacity: 0.5;
+  }
+  ion-toggle {
+    padding-right: 0;
+  }
+  ion-label {
+    font-size: $form-font-size;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 90%;
+  margin: 200px auto;
+  max-width: 400px;
+
+  @media screen and (min-width: 960px) {
+    margin: 20vh auto 0;
+    max-width: 300px;
+  }
+  .logo {
+    height: 100px;
+    width: 100px;
+    background: url("/assets/images/logo.jpg") no-repeat;
+    background-size: cover;
+    margin: 50px;
+    position: absolute;
+    top: 0;
+    @media screen and (min-width: 960px) {
+      position: relative;
+      margin: 30px;
+    }
+  }
+  .title {
+    display: none;
+    margin: 0;
+    @media screen and (min-width: 960px) {
+      display: block;
+      position: relative;
+      font-size: 1.1em;
+    }
+  }
+
+  #loginForm {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 15px;
+    .button {
+      height: 45px;
+      background: $primary-color;
+      width: calc(100% + 30px);
+      margin-bottom: -15px;
+      align-self: center;
+      color: white;
+      border-radius: 0;
+      font-size: $form-font-size;
+
+      @media screen and (min-width: 960px) {
+        text-transform: none;
+        width: 40%;
+        border: 1px solid $primary-color;
+        border-radius: 25px;
+        background: white;
+        color: black;
+        margin: auto;
+        height: 30px;
+      }
+    }
+  }
+}

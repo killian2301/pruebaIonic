@@ -1,0 +1,68 @@
+<ion-content>
+  <div class="container animate__animated animate__fadeIn">
+    <div class="logo animate__animated animate__fadeInUp"></div>
+    <h2 class="title animate__animated animate__fadeInUp">Prueba técnica</h2>
+
+    <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-item lines="full">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input
+          class="email-input"
+          formControlName="email"
+          type="email"
+          placeholder="Email"
+        ></ion-input>
+      </ion-item>
+      <ion-note
+        color="danger"
+        id="email-required"
+        *ngIf="isFormSubmitted && loginForm.get('email').hasError('required')"
+        >Este campo es requerido</ion-note
+      >
+      <ion-note
+        color="danger"
+        id="email-invalid"
+        *ngIf="isFormSubmitted && loginForm.get('email').hasError('pattern')"
+        >El email no tiene un formato válido</ion-note
+      >
+
+      <ion-item lines="full">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input
+          class="password-input"
+          formControlName="password"
+          type="password"
+          placeholder="Contraseña"
+        ></ion-input>
+      </ion-item>
+      <ion-note
+        color="danger"
+        id="password-required"
+        *ngIf="isFormSubmitted && loginForm.get('password').hasError('required')"
+        >Este campo es requerido</ion-note
+      >
+      <ion-note
+        id="password-invalid"
+        color="danger"
+        *ngIf="isFormSubmitted && loginForm.get('password').hasError('minlength')"
+        >La contraseña debe tener al menos 5 caracteres</ion-note
+      >
+      <ion-item lines="none">
+        <ion-label>Recordar</ion-label>
+        <ion-toggle
+          id="remember-toggle"
+          mode="md"
+          slot="end"
+          formControlName="remember"
+        ></ion-toggle>
+      </ion-item>
+      <button
+        class="button animate__animated animate__fadeIn animate__slow"
+        type="submit"
+      >
+        Acceder
+      </button>
+    </form>
+  </div>
+  <div class="background-image"></div>
+</ion-content>
